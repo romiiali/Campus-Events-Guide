@@ -14,14 +14,16 @@
   <header>
     <a class="title" href="index.html">Campus Events Guide</a>
 
-    <nav>
+    <nav aria-label="Main navigation">
+      <a class="link" href="index.html">Home</a>
       <a class="link" href="events.html">Events</a>
-      <a class="link" href="event-detail.html">Event Details</a>
+      <a class="link" href="event-details.html">Event Details</a>
       <a class="link active" href="schedule.html">Schedule</a>
       <a class="link" href="registration.html">Register</a>
     </nav>
 
-    <label class="subtext">Dark Mode <input type="checkbox"></label>
+    <!-- CSS-only dark mode: style.css reacts to this checkbox with :has() -->
+    <label class="subtext" for="dark-mode">Dark Mode <input type="checkbox" id="dark-mode"></label>
   </header>
 
   <main class="MainContentGrid">
@@ -49,6 +51,8 @@
         <tbody>
           <tr class="highlight">
             <td>
+              <span class="tag tag-green">★ Featured</span>
+              <span class="tag">Workshops &amp; Talks</span><br>
               <strong class="title">Campus Innovation Day</strong>
             </td>
             <td>
@@ -57,10 +61,11 @@
             </td>
             <td><time datetime="10:00">10:00 AM</time> – <time datetime="15:00">3:00 PM</time></td>
             <td>University Main Hall</td>
-            <td><a class="button button-outline" href="event-detail.html">View Details</a></td>
+            <td><a class="button button-outline" href="event-details.html">View Details</a></td>
           </tr>
           <tr>
             <td>
+              <span class="tag">Cultural Showcase</span><br>
               <strong class="title">Annual Autumn Film Showcase</strong>
             </td>
             <td>
@@ -73,6 +78,7 @@
           </tr>
           <tr>
             <td>
+              <span class="tag">Academic Debate</span><br>
               <strong class="title">Global Perspectives Student Debate</strong>
             </td>
             <td>
@@ -85,6 +91,7 @@
           </tr>
           <tr>
             <td>
+              <span class="tag">Sustainability</span><br>
               <strong class="title">Green Campus Sustainability Workshop</strong>
             </td>
             <td>
@@ -97,6 +104,7 @@
           </tr>
           <tr>
             <td>
+              <span class="tag">Athletics &amp; Sports</span><br>
               <strong class="title">Inter-Collegiate Rowing Regatta</strong>
             </td>
             <td>
@@ -109,6 +117,7 @@
           </tr>
           <tr>
             <td>
+              <span class="tag">Career &amp; Industry</span><br>
               <strong class="title">Graduate Tech Career Meetup</strong>
             </td>
             <td>
@@ -121,6 +130,7 @@
           </tr>
           <tr>
             <td>
+              <span class="tag">Music &amp; Performance</span><br>
               <strong class="title">Winter Choral Concert</strong>
             </td>
             <td>
@@ -132,6 +142,12 @@
             <td><span class="tag">Open Entry</span></td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">All timestamps refer to local university campus standard time (GMT).</td>
+            <td colspan="2">Subject to venue capacity allocations</td>
+          </tr>
+        </tfoot>
       </table>
     </section>
 
@@ -145,12 +161,19 @@
       </div>
 
       <div class="rightCard">
-        <a class="link" href="#">Campus Life</a>
-        <a class="link" href="#">Student Union</a>
-        <a class="link" href="#">University Press</a>
-        <a class="link" href="#">Contact Organizers</a>
+        <a class="link" href="events.html">Campus Life</a>
+        <a class="link" href="schedule.html">Event Schedule</a>
+        <a class="link" href="registration.html">Register</a>
+        <a class="link" href="mailto:events@university.edu">Contact Organizers</a>
       </div>
     </div>
+
+    <nav class="row" aria-label="Social media">
+      <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </nav>
   </footer>
 
 </body>

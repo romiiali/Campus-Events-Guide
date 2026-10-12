@@ -14,14 +14,16 @@
   <header>
     <a class="title" href="index.html">Campus Events Guide</a>
 
-    <nav>
+    <nav aria-label="Main navigation">
+      <a class="link" href="index.html">Home</a>
       <a class="link" href="events.html">Events</a>
-      <a class="link" href="event-detail.html">Event Details</a>
+      <a class="link" href="event-details.html">Event Details</a>
       <a class="link" href="schedule.html">Schedule</a>
       <a class="link active" href="registration.html">Register</a>
     </nav>
 
-    <label class="subtext">Dark Mode <input type="checkbox"></label>
+    <!-- CSS-only dark mode: style.css reacts to this checkbox with :has() -->
+    <label class="subtext" for="dark-mode">Dark Mode <input type="checkbox" id="dark-mode"></label>
   </header>
 
   <main class="MainContentGrid">
@@ -29,6 +31,9 @@
     <section class="section" aria-labelledby="register-title">
       <p class="tag">Official University Entry Form</p>
       <h1 id="register-title" class="page-title">Register for Campus Innovation Day</h1>
+      <p class="green-text">
+        <time datetime="2026-11-18">18 November 2026</time> &bull; 10:00 AM – 3:00 PM &bull; University Main Hall
+      </p>
       <p class="subtext">
         Please complete the form below. All fields marked <strong>(Required)</strong> must be
         completed. This is a front-end demonstration form.
@@ -46,18 +51,24 @@
 
           <p class="field">
             <label for="full-name">Full Name <strong>(Required)</strong></label>
-            <input class="input" type="text" id="full-name" name="full-name" placeholder="e.g., Jane Alexandra Doe" autocomplete="name" required>
+            <input class="input" type="text" id="full-name" name="full-name" placeholder="e.g., Jane Alexandra Doe" autocomplete="name" minlength="3" maxlength="60" required>
+          </p>
+
+          <p class="field">
+            <label for="student-id">Student ID <strong>(Required)</strong></label>
+            <input class="input" type="text" id="student-id" name="student-id" placeholder="e.g., 202301234" inputmode="numeric" pattern="[0-9]{9}" maxlength="9" title="Your 9-digit student ID" aria-describedby="id-help" required>
+            <small id="id-help" class="subtext">9 digits, as printed on your student card.</small>
           </p>
 
           <p class="field">
             <label for="email">Student Email Address <strong>(Required)</strong></label>
-            <input class="input" type="email" id="email" name="email" placeholder="j.doe@university.edu" autocomplete="email" aria-describedby="email-help" required>
+            <input class="input" type="email" id="email" name="email" placeholder="j.doe@university.edu" autocomplete="email" aria-describedby="email-help" maxlength="80" required>
             <small id="email-help" class="subtext">Must be your university or personal email for confirmation tickets and schedule dispatches.</small>
           </p>
 
           <p class="field">
             <label for="profile-url">Personal, Portfolio, or Student Profile URL <strong>(Optional)</strong></label>
-            <input class="input" type="url" id="profile-url" name="profile-url" placeholder="https://github.com/janedoe or https://linkedin.com/in/janedoe">
+            <input class="input" type="url" id="profile-url" name="profile-url" pattern="https://.*" title="Must start with https://" placeholder="https://github.com/janedoe or https://linkedin.com/in/janedoe">
           </p>
         </fieldset>
 
@@ -117,6 +128,12 @@
           </div>
 
           <p class="field">
+            <label for="badge-color">Badge Lanyard Color</label>
+            <input class="color" type="color" id="badge-color" name="badge-color" value="#006a61" aria-describedby="color-help">
+            <small id="color-help" class="subtext">Pick the lanyard color for your printed badge.</small>
+          </p>
+
+          <p class="field">
             <span class="row space-between">
               <label for="participation">Participation Preference Level</label>
               <small class="subtext">Scale 1 (Passive) - 5 (Active)</small>
@@ -154,7 +171,7 @@
 
           <p class="field">
             <label for="notes">Dietary requirements, accessibility notes, or special considerations <strong>(Optional)</strong></label>
-            <textarea class="input" id="notes" name="notes" rows="4" placeholder="E.g., Vegetarian meal preference, wheelchair accessible seating requirement, sign language interpretation needed, etc."></textarea>
+            <textarea class="input" id="notes" name="notes" rows="4" maxlength="500" placeholder="E.g., Vegetarian meal preference, wheelchair accessible seating requirement, sign language interpretation needed, etc."></textarea>
           </p>
 
           <p class="choice">
@@ -175,7 +192,7 @@
       <!-- Sidebar: event summary -->
       <aside class="article-card" aria-label="Event summary">
         <figure>
-          <img src="images/registration-hall.jpg" alt="Students at exhibition booths inside University Main Hall" width="512" height="279">
+          <img src="assets/registration-hall.jpg" alt="Students at exhibition booths inside University Main Hall" width="512" height="279">
         </figure>
 
         <dl class="info-grid">
@@ -198,12 +215,21 @@
         </dl>
 
         <hr class="divider">
-        <a class="button button-outline" href="event-detail.html">View Full Event Details</a>
+        <a class="button button-outline" href="event-details.html">View Full Event Details</a>
 
         <p class="row space-between">
           <strong class="subtext">Venue Directions</strong>
           <span class="green-text">Main Hall Quad</span>
         </p>
+
+        <hr class="divider">
+
+        <h2 class="title">Event Contact</h2>
+        <address class="subtext">
+          Campus Events Office<br>
+          Email: <a class="green-text" href="mailto:events@university.edu">events@university.edu</a><br>
+          Phone: <a class="green-text" href="tel:+20238540000">+20 2 3854 0000</a>
+        </address>
       </aside>
 
     </div>
@@ -217,12 +243,19 @@
       </div>
 
       <div class="rightCard">
-        <a class="link" href="#">Campus Life</a>
-        <a class="link" href="#">Student Union</a>
-        <a class="link" href="#">University Press</a>
-        <a class="link" href="#">Contact Organizers</a>
+        <a class="link" href="events.html">Campus Life</a>
+        <a class="link" href="schedule.html">Event Schedule</a>
+        <a class="link" href="registration.html">Register</a>
+        <a class="link" href="mailto:events@university.edu">Contact Organizers</a>
       </div>
     </div>
+
+    <nav class="row" aria-label="Social media">
+      <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </nav>
   </footer>
 
 </body>
