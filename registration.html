@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Campus Events Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a class="title" href="index.html">Campus Events Guide</a>
+
+    <nav>
+      <a class="link" href="events.html">Events</a>
+      <a class="link" href="event-detail.html">Event Details</a>
+      <a class="link" href="schedule.html">Schedule</a>
+      <a class="link active" href="registration.html">Register</a>
+    </nav>
+
+    <label class="subtext">Dark Mode <input type="checkbox"></label>
+  </header>
+
+  <main class="MainContentGrid">
+
+    <section class="section" aria-labelledby="register-title">
+      <p class="tag">Official University Entry Form</p>
+      <h1 id="register-title" class="page-title">Register for Campus Innovation Day</h1>
+      <p class="subtext">
+        Please complete the form below. All fields marked <strong>(Required)</strong> must be
+        completed. This is a front-end demonstration form.
+      </p>
+    </section>
+
+    <div class="split">
+
+      <form class="form" action="#" method="post" enctype="multipart/form-data">
+
+        <!-- Section A -->
+        <fieldset class="article-card fieldset">
+          <legend class="title legend">Section A — Your Details</legend>
+          <p class="green-text">Student Profile</p>
+
+          <p class="field">
+            <label for="full-name">Full Name <strong>(Required)</strong></label>
+            <input class="input" type="text" id="full-name" name="full-name" placeholder="e.g., Jane Alexandra Doe" autocomplete="name" required>
+          </p>
+
+          <p class="field">
+            <label for="email">Student Email Address <strong>(Required)</strong></label>
+            <input class="input" type="email" id="email" name="email" placeholder="j.doe@university.edu" autocomplete="email" aria-describedby="email-help" required>
+            <small id="email-help" class="subtext">Must be your university or personal email for confirmation tickets and schedule dispatches.</small>
+          </p>
+
+          <p class="field">
+            <label for="profile-url">Personal, Portfolio, or Student Profile URL <strong>(Optional)</strong></label>
+            <input class="input" type="url" id="profile-url" name="profile-url" placeholder="https://github.com/janedoe or https://linkedin.com/in/janedoe">
+          </p>
+        </fieldset>
+
+        <!-- Section B -->
+        <fieldset class="article-card fieldset">
+          <legend class="title legend">Section B — Attendance Preferences</legend>
+          <p class="green-text">Logistics &amp; Track</p>
+
+          <p class="field">
+            <label for="track">Select Event Track <strong>(Required)</strong></label>
+            <select class="input" id="track" name="track" required>
+              <option value="" selected disabled>-- Choose your primary track agenda --</option>
+              <option value="ai">AI &amp; Machine Intelligence</option>
+              <option value="robotics">Robotics &amp; Embedded Systems</option>
+              <option value="health">Biomedical &amp; Health Technology</option>
+              <option value="sustainability">Clean Energy &amp; Sustainability</option>
+              <option value="ventures">Student Ventures &amp; Pitching</option>
+            </select>
+          </p>
+
+          <fieldset class="fieldset">
+            <legend class="field">Attendance Format <strong>(Required)</strong></legend>
+            <div class="form-grid">
+            <label class="choice" for="format-attendee">
+              <input type="radio" id="format-attendee" name="format" value="attendee" checked required>
+              In-person attendee
+            </label>
+            <label class="choice" for="format-presenter">
+              <input type="radio" id="format-presenter" name="format" value="presenter">
+              Project presenter / exhibitor
+            </label>
+            <label class="choice" for="format-volunteer">
+              <input type="radio" id="format-volunteer" name="format" value="volunteer">
+              Volunteer staff
+            </label>
+            </div>
+          </fieldset>
+
+          <div class="form-grid">
+            <p class="field">
+              <label for="guests">Number of Attendees / Guests <strong>(Required)</strong></label>
+              <input class="input" type="number" id="guests" name="guests" value="1" min="1" max="5" aria-describedby="guests-help" required>
+              <small id="guests-help" class="subtext">Min: 1, Max: 5 passes</small>
+            </p>
+
+            <p class="field">
+              <label for="preferred-date">Preferred Date <strong>(Required)</strong></label>
+              <input class="input" type="date" id="preferred-date" name="preferred-date" value="2026-11-18" aria-describedby="date-help" required>
+              <small id="date-help" class="subtext">Main session date</small>
+            </p>
+
+            <p class="field">
+              <label for="arrival-time">Expected Arrival Time <strong>(Required)</strong></label>
+              <input class="input" type="time" id="arrival-time" name="arrival-time" value="09:45" aria-describedby="time-help" required>
+              <small id="time-help" class="subtext">Doors open 9:30 AM</small>
+            </p>
+          </div>
+
+          <p class="field">
+            <span class="row space-between">
+              <label for="participation">Participation Preference Level</label>
+              <small class="subtext">Scale 1 (Passive) - 5 (Active)</small>
+            </span>
+            <input class="range" type="range" id="participation" name="participation" min="1" max="5" step="1" value="3" list="participation-levels">
+            <datalist id="participation-levels">
+              <option value="1" label="Passive Listener"></option>
+              <option value="2" label="Casual Networker"></option>
+              <option value="3" label="Collaborator"></option>
+              <option value="4" label="Pitch Supporter"></option>
+              <option value="5" label="Active Contributor"></option>
+            </datalist>
+          </p>
+          <ol class="scale">
+            <li>Passive Listener</li>
+            <li>Casual Networker</li>
+            <li>Collaborator</li>
+            <li>Pitch Supporter</li>
+            <li>Active Contributor</li>
+          </ol>
+        </fieldset>
+
+        <!-- Section C -->
+        <fieldset class="article-card fieldset">
+          <legend class="title legend">Section C — Additional Information</legend>
+          <p class="green-text">Accommodations</p>
+
+          <div class="field">
+            <label for="support-doc">Supporting Document or Accessibility Requirements Note <strong>(Optional)</strong></label>
+            <div class="upload">
+              <input type="file" id="support-doc" name="support-doc" accept=".pdf,.docx" aria-describedby="doc-help">
+              <small id="doc-help" class="subtext">Upload PDF or DOCX up to 5MB (Project overview, medical dietary proof, or mobility accommodation details)</small>
+            </div>
+          </div>
+
+          <p class="field">
+            <label for="notes">Dietary requirements, accessibility notes, or special considerations <strong>(Optional)</strong></label>
+            <textarea class="input" id="notes" name="notes" rows="4" placeholder="E.g., Vegetarian meal preference, wheelchair accessible seating requirement, sign language interpretation needed, etc."></textarea>
+          </p>
+
+          <p class="choice">
+            <input type="checkbox" id="confirm" name="confirm" required>
+            <label for="confirm">
+              <strong>I confirm my attendance and agree to receive event updates (Required)</strong><br>
+              <span class="subtext">I acknowledge that my registration badge is non-transferable and matches university
+              credentials. Event updates will be sent via email.</span>
+            </label>
+          </p>
+        </fieldset>
+
+        <p class="row">
+          <button class="button" type="submit">Submit Registration →</button>
+        </p>
+      </form>
+
+      <!-- Sidebar: event summary -->
+      <aside class="article-card" aria-label="Event summary">
+        <figure>
+          <img src="images/registration-hall.jpg" alt="Students at exhibition booths inside University Main Hall" width="512" height="279">
+        </figure>
+
+        <dl class="info-grid">
+          <div>
+            <dt>Date</dt>
+            <dd><time datetime="2026-11-18">18 November 2026</time></dd>
+          </div>
+          <div>
+            <dt>Time</dt>
+            <dd><time datetime="10:00">10:00 AM</time> – <time datetime="15:00">3:00 PM</time></dd>
+          </div>
+          <div>
+            <dt>Venue</dt>
+            <dd>University Main Hall</dd>
+          </div>
+          <div>
+            <dt>Entry Cost</dt>
+            <dd>Free with registration</dd>
+          </div>
+        </dl>
+
+        <hr class="divider">
+        <a class="button button-outline" href="event-detail.html">View Full Event Details</a>
+
+        <p class="row space-between">
+          <strong class="subtext">Venue Directions</strong>
+          <span class="green-text">Main Hall Quad</span>
+        </p>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="HorizontalBorder">
+      <div class="leftCard">
+        <h2 class="title">Campus Events Guide</h2>
+        <p class="subtext">Connecting students with vibrant academic, cultural, and community activities across campus.</p>
+      </div>
+
+      <div class="rightCard">
+        <a class="link" href="#">Campus Life</a>
+        <a class="link" href="#">Student Union</a>
+        <a class="link" href="#">University Press</a>
+        <a class="link" href="#">Contact Organizers</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

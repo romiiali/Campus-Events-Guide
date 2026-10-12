@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Events Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a class="title" href="index.html">Campus Events Guide</a>
+
+    <nav aria-label="Main navigation">
+      <a class="link" href="index.html">Home</a>
+      <a class="link active" href="events.html">Events</a>
+      <a class="link" href="event-details.html">Event Details</a>
+      <a class="link" href="schedule.html">Schedule</a>
+      <a class="link" href="registration.html">Register</a>
+    </nav>
+
+    <!-- CSS-only dark mode: style.css reacts to this checkbox with :has() -->
+    <label class="subtext" for="dark-mode">Dark Mode <input type="checkbox" id="dark-mode"></label>
+  </header>
+
+  <main>
+    <section class="HeroSection">
+      <div class="HeroSectionTop">
+        <div>
+          <h1>Explore campus events</h1>
+          <p class="subtext">Discover upcoming seminars, cultural performances, and hands-on workshops happening across all faculties.</p>
+        </div>
+      </div>
+
+      <div class="HeroSectionBottom">
+        <a class="link-container link" href="#">Workshops &amp; Talks</a>
+        <a class="link-container link" href="#">Arts &amp; Culture</a>
+        <a class="link-container link" href="#">Student Life</a>
+        <a class="link-container link" href="#">Sports &amp; Recreation</a>
+        <a class="link-container link" href="#">Career &amp; Tech</a>
+      </div>
+    </section>
+
+    <div class="MainContentGrid">
+
+      <section class="UpcomingSection" id="events">
+        <h2 class="section-title">Upcoming events</h2>
+
+        <div class="Cardgrid">
+
+          <article class="article-card">
+            <img src="assets/innovation-day-banner.jpg" alt="Students in matching jackets talking in a busy innovation atrium beside a robotics prototype">
+            <div>
+              <p class="green-text">18 November 2026 &bull; 10:00 AM – 3:00 PM</p>
+              <h3 class="title">Campus Innovation Day</h3>
+              <p class="subtext">Annual multidisciplinary project showcase featuring undergraduate ventures, hardware demos, and...</p>
+              <p class="subtext">University Main Hall</p>
+              <a class="button" href="event-details.html">View Details</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="assets/film-showcase.jpg" alt="Audience watching a film screening">
+            <div>
+              <p class="green-text">21 November 2026</p>
+              <h3 class="title">Annual Autumn Film &amp; Media Showcase</h3>
+              <p class="subtext">Curated shorts, immersive installations, and documentary previews created by...</p>
+              <p class="subtext">Arts Centre Cinema</p>
+              <a class="button" href="schedule.html">View in Schedule</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="assets/student-debate.jpg" alt="Student debate in a lecture hall">
+            <div>
+              <p class="green-text">24 November 2026</p>
+              <h3 class="title">Global Perspectives Student Debate</h3>
+              <p class="subtext">International student union debate examining diplomatic responses to...</p>
+              <p class="subtext">Wilson Lecture Theatre</p>
+              <a class="button" href="schedule.html">View in Schedule</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="assets/sustainability-workshop.jpg" alt="Participants in a greenhouse">
+            <div>
+              <p class="green-text">28 November 2026</p>
+              <h3 class="title">Green Campus Sustainability Workshop</h3>
+              <p class="subtext">Hands-on session on urban biodiversity mapping, campus zero-waste practices,...</p>
+              <p class="subtext">Eco Hub Pavilion</p>
+              <a class="button" href="schedule.html">View in Schedule</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="assets/rowing-regatta.svg" alt="Illustration of a rowing boat with four rowers on a river">
+            <div>
+              <p class="green-text">02 December 2026</p>
+              <h3 class="title">Inter-Collegiate Rowing Regatta</h3>
+              <p class="subtext">Head-to-head racing between rival residential halls on the river course...</p>
+              <p class="subtext">Riverfront Boathouse</p>
+              <a class="button" href="schedule.html">View in Schedule</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <img src="assets/registration-hall.jpg" alt="Students and recruiters talking at booths in a busy hall">
+            <div>
+              <p class="green-text">05 December 2026</p>
+              <h3 class="title">Graduate Tech Career Meetup</h3>
+              <p class="subtext">Networking dinner and portfolio review session with lead engineers, alumni...</p>
+              <p class="subtext">Great Hall Atrium</p>
+              <a class="button" href="schedule.html">View in Schedule</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="PastEvents">
+        <div class="PastEventsTop">
+          <div>
+            <p class="green-text">Archives &amp; Records</p>
+            <h2 class="title">Past events</h2>
+          </div>
+          <p class="subtext">Concluded sessions from Autumn Term</p>
+        </div>
+
+        <div class="PastEventsBottom">
+          <article class="PastEventsCard">
+            <div>
+              <span class="green-text">Past Event</span>
+              <span class="subtext">04 Oct 2026</span>
+            </div>
+            <h3 class="title">Campus Welcome Festival &amp; Food Fair</h3>
+            <p class="subtext">Outdoor community fair welcoming 3,000+ incoming undergraduates with campus club exhibits and regional artisan food trucks.</p>
+            <div class="events-card-footer">
+              <span class="subtext">Central Quadrangle</span>
+            </div>
+          </article>
+
+          <article class="PastEventsCard">
+            <div>
+              <span class="green-text">Past Event</span>
+              <span class="subtext">12 Oct 2026</span>
+            </div>
+            <h3 class="title">Alumni Leadership Keynote</h3>
+            <p class="subtext">Distinguished lecture delivered by class of 2008 public policy laureate on ethical leadership across international governance.</p>
+            <div class="events-card-footer">
+              <span class="subtext">Founders Hall</span>
+            </div>
+          </article>
+
+          <article class="PastEventsCard">
+            <div>
+              <span class="green-text">Past Event</span>
+              <span class="subtext">25 Oct 2026</span>
+            </div>
+            <h3 class="title">Undergraduate Research Symposium</h3>
+            <p class="subtext">Over 70 peer-reviewed poster presentations by science and humanities scholars, adjudicated by university faculty members.</p>
+            <div class="events-card-footer">
+              <span class="subtext">Science Concourse</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="HorizontalBorder">
+      <div class="leftCard">
+        <h2 class="title">Campus Events Guide</h2>
+        <p class="subtext">Connecting students with vibrant academic, cultural, and community activities across campus.</p>
+      </div>
+
+      <div class="rightCard">
+        <a class="link" href="events.html">Campus Life</a>
+        <a class="link" href="schedule.html">Event Schedule</a>
+        <a class="link" href="registration.html">Register</a>
+        <a class="link" href="mailto:events@university.edu">Contact Organizers</a>
+      </div>
+    </div>
+
+    <nav class="row" aria-label="Social media">
+      <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

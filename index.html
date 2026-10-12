@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Events Guide | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a class="title" href="index.html">Campus Events Guide</a>
+
+    <nav aria-label="Main navigation">
+      <a class="link active" href="index.html">Home</a>
+      <a class="link" href="events.html">Events</a>
+      <a class="link" href="event-details.html">Event Details</a>
+      <a class="link" href="schedule.html">Schedule</a>
+      <a class="link" href="registration.html">Register</a>
+    </nav>
+
+    <!-- CSS-only dark mode: style.css reacts to this checkbox with :has() -->
+    <label class="subtext" for="dark-mode">Dark Mode <input type="checkbox" id="dark-mode"></label>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="HeroSection">
+      <div class="split split-even">
+        <div class="section">
+          <h1>Discover what’s happening on campus.</h1>
+          <p class="subtext">
+            Explore curated workshops, keynote symposiums, and vibrant student-led culture.
+            Inspect verified session details, follow real-time timetable tracks, and reserve
+            your seat in seconds.
+          </p>
+          <p class="row">
+            <a href="events.html" class="button">Explore events →</a>
+            <a href="schedule.html" class="button button-outline">View schedule</a>
+          </p>
+
+          <ul class="Stats">
+            <li><strong>48+</strong> Live Sessions</li>
+            <li><strong>12</strong> Campus Hubs</li>
+            <li><strong>Free</strong> Passes Open</li>
+          </ul>
+        </div>
+
+        <figure>
+          <img src="assets/campus-hero.jpg" alt="Students gathering at event booths on a campus plaza in autumn" width="512" height="279">
+        </figure>
+      </div>
+    </section>
+
+    <div class="MainContentGrid">
+
+      <!-- Spotlight / Featured event -->
+      <section class="section">
+        <div class="row space-between">
+          <p id="spotlight-title" class="green-text">Spotlight Opportunity</p>
+          <p class="green-text">Priority Registration</p>
+        </div>
+
+        <article class="article-card split split-even">
+          <figure>
+            <img src="assets/innovation-lab.jpg" alt="Students and a mentor working on robotics hardware in a lab" width="512" height="279">
+          </figure>
+
+          <div class="section">
+            <p class="row">
+              <span class="tag tag-green">Featured Event</span>
+              <span class="tag">Workshops &amp; Talks</span>
+            </p>
+            <h2 class="page-title">Campus Innovation Day</h2>
+            <p class="subtext">
+              Discover boundary-pushing student breakthroughs, inspect live software demos,
+              join fireside founder panels, and gain practical engineering guidance in
+              interactive mentor clinics.
+            </p>
+
+            <dl class="info-grid">
+              <div>
+                <dt>Date</dt>
+                <dd><time datetime="2026-11-18">18 November 2026</time></dd>
+              </div>
+              <div>
+                <dt>Time</dt>
+                <dd><time datetime="10:00">10:00 AM</time> – <time datetime="15:00">3:00 PM</time></dd>
+              </div>
+              <div>
+                <dt>Venue</dt>
+                <dd>University Main Hall</dd>
+              </div>
+              <div>
+                <dt>Entry Fee</dt>
+                <dd>Free with registration</dd>
+              </div>
+            </dl>
+
+            <hr class="divider">
+
+            <p class="row">
+              <a class="button" href="registration.html">Register</a>
+              <a class="button button-outline" href="event-details.html">View event details ↗</a>
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Upcoming highlights -->
+      <section id="highlights" class="UpcomingSection" aria-labelledby="highlights-title">
+        <div class="row space-between">
+          <div>
+            <p class="green-text">Seasonal Program</p>
+            <h2 id="highlights-title" class="section-title">Upcoming Campus Highlights</h2>
+          </div>
+          <a class="green-text" href="schedule.html">See complete calendar →</a>
+        </div>
+
+        <div class="Cardgrid">
+          <article class="article-card">
+            <figure>
+              <img src="assets/film-showcase.jpg" alt="Audience watching a film screening in a dark cinema" width="512" height="279">
+            </figure>
+            <div>
+              <p class="tag">Arts &amp; Culture</p>
+            <h3 class="title">Annual Autumn Film &amp; Media Showcase</h3>
+            <p class="subtext">Experience student cinematography premieres, sound design portfolios, and short documentary screenings.</p>
+            <ul class="meta">
+              <li><time datetime="2026-11-21">21 Nov 2026</time></li>
+              <li><time datetime="18:00">6:00 PM</time></li>
+              <li>Arts Centre Cinema</li>
+            </ul>
+            <a class="green-text" href="event-details.html">View event details →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <figure>
+              <img src="assets/student-debate.jpg" alt="Students debating in a wood-panelled lecture theatre" width="512" height="279">
+            </figure>
+            <div>
+              <p class="tag">Student Life</p>
+            <h3 class="title">Global Perspectives Student Debate</h3>
+            <p class="subtext">Inter-faculty teams clash over international policy, artificial intelligence governance, and global climate commitments.</p>
+            <ul class="meta">
+              <li><time datetime="2026-11-24">24 Nov 2026</time></li>
+              <li><time datetime="14:00">2:00 PM</time></li>
+              <li>Wilson Lecture Theatre</li>
+            </ul>
+            <a class="green-text" href="event-details.html">View event details →</a>
+            </div>
+          </article>
+
+          <article class="article-card">
+            <figure>
+              <img src="assets/sustainability-workshop.jpg" alt="Students potting plants at a greenhouse workshop" width="512" height="279">
+            </figure>
+            <div>
+              <p class="tag">Workshops &amp; Talks</p>
+            <h3 class="title">Green Campus Sustainability Workshop</h3>
+            <p class="subtext">Practical lifecycle analysis, closed-loop urban composting labs, and campus biodiversity planning sessions.</p>
+            <ul class="meta">
+              <li><time datetime="2026-11-28">28 Nov 2026</time></li>
+              <li><time datetime="11:00">11:00 AM</time></li>
+              <li>Eco Hub Pavilion</li>
+            </ul>
+            <a class="green-text" href="event-details.html">View event details →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Directory call to action -->
+      <section class="tint row space-between" aria-labelledby="directory-title">
+        <div class="section">
+          <p class="green-text">Comprehensive Directory</p>
+          <h2 id="directory-title" class="title">Looking for more? Browse past symposiums, sports days, and campus gatherings.</h2>
+          <p class="subtext">
+            Access past keynote recordings, filter by academic department, download session
+            slide packs, or register early for the upcoming Spring semester agenda.
+          </p>
+        </div>
+        <a class="button" href="events.html">View full event catalogue</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="HorizontalBorder">
+      <div class="leftCard">
+        <h2 class="title">Campus Events Guide</h2>
+        <p class="subtext">Connecting students with vibrant academic, cultural, and community activities across campus.</p>
+      </div>
+
+      <div class="rightCard">
+        <a class="link" href="events.html">Campus Life</a>
+        <a class="link" href="schedule.html">Event Schedule</a>
+        <a class="link" href="registration.html">Register</a>
+        <a class="link" href="mailto:events@university.edu">Contact Organizers</a>
+      </div>
+    </div>
+
+    <nav class="row" aria-label="Social media">
+      <a class="link" href="https://www.facebook.com" target="_blank" rel="noopener">Facebook</a>
+      <a class="link" href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="link" href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

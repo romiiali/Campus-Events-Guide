@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule | Campus Events Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a class="title" href="index.html">Campus Events Guide</a>
+
+    <nav>
+      <a class="link" href="events.html">Events</a>
+      <a class="link" href="event-detail.html">Event Details</a>
+      <a class="link active" href="schedule.html">Schedule</a>
+      <a class="link" href="registration.html">Register</a>
+    </nav>
+
+    <label class="subtext">Dark Mode <input type="checkbox"></label>
+  </header>
+
+  <main class="MainContentGrid">
+
+    <section class="section" aria-labelledby="schedule-title">
+      <h1 id="schedule-title" class="page-title">Campus event schedule</h1>
+      <p class="subtext">
+        Complete timetable of scheduled workshops, keynote lectures, and student
+        activities for the Autumn semester.
+      </p>
+    </section>
+
+    <section class="table-wrap" aria-label="Event timetable">
+      <table class="table">
+        <caption class="green-text">Autumn semester events</caption>
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Venue</th>
+            <th scope="col">Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>
+              <strong class="title">Campus Innovation Day</strong>
+            </td>
+            <td>
+              <time datetime="2026-11-18">18 November 2026</time><br>
+              <small class="subtext">Wednesday</small>
+            </td>
+            <td><time datetime="10:00">10:00 AM</time> – <time datetime="15:00">3:00 PM</time></td>
+            <td>University Main Hall</td>
+            <td><a class="button button-outline" href="event-detail.html">View Details</a></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Annual Autumn Film Showcase</strong>
+            </td>
+            <td>
+              <time datetime="2026-11-21">21 November 2026</time><br>
+              <small class="subtext">Saturday</small>
+            </td>
+            <td><time datetime="18:00">6:00 PM</time> – <time datetime="21:00">9:00 PM</time></td>
+            <td>Arts Centre Cinema</td>
+            <td><span class="tag">Open Entry</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Global Perspectives Student Debate</strong>
+            </td>
+            <td>
+              <time datetime="2026-11-24">24 November 2026</time><br>
+              <small class="subtext">Tuesday</small>
+            </td>
+            <td><time datetime="14:00">2:00 PM</time> – <time datetime="16:00">4:00 PM</time></td>
+            <td>Wilson Lecture Theatre</td>
+            <td><span class="tag">Open Entry</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Green Campus Sustainability Workshop</strong>
+            </td>
+            <td>
+              <time datetime="2026-11-28">28 November 2026</time><br>
+              <small class="subtext">Saturday</small>
+            </td>
+            <td><time datetime="11:00">11:00 AM</time> – <time datetime="13:30">1:30 PM</time></td>
+            <td>Eco Hub Pavilion</td>
+            <td><span class="tag">Limited Seats</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Inter-Collegiate Rowing Regatta</strong>
+            </td>
+            <td>
+              <time datetime="2026-12-02">02 December 2026</time><br>
+              <small class="subtext">Wednesday</small>
+            </td>
+            <td><time datetime="09:00">9:00 AM</time> – <time datetime="13:00">1:00 PM</time></td>
+            <td>Riverfront Boathouse</td>
+            <td><span class="tag">Spectator Free</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Graduate Tech Career Meetup</strong>
+            </td>
+            <td>
+              <time datetime="2026-12-05">05 December 2026</time><br>
+              <small class="subtext">Saturday</small>
+            </td>
+            <td><time datetime="16:00">4:00 PM</time> – <time datetime="19:00">7:00 PM</time></td>
+            <td>Great Hall Atrium</td>
+            <td><span class="tag">Student ID Req.</span></td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title">Winter Choral Concert</strong>
+            </td>
+            <td>
+              <time datetime="2026-12-10">10 December 2026</time><br>
+              <small class="subtext">Thursday</small>
+            </td>
+            <td><time datetime="19:00">7:00 PM</time> – <time datetime="21:30">9:30 PM</time></td>
+            <td>University Chapel</td>
+            <td><span class="tag">Open Entry</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="HorizontalBorder">
+      <div class="leftCard">
+        <h2 class="title">Campus Events Guide</h2>
+        <p class="subtext">Connecting students with vibrant academic, cultural, and community activities across campus.</p>
+      </div>
+
+      <div class="rightCard">
+        <a class="link" href="#">Campus Life</a>
+        <a class="link" href="#">Student Union</a>
+        <a class="link" href="#">University Press</a>
+        <a class="link" href="#">Contact Organizers</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,1024 @@
+/* ============================================================
+   COLOR VARIABLES
+   Every color in this file comes from these variables, so dark mode
+   only has to redefine them (see DARK MODE at the bottom).
+   ============================================================ */
+:root {
+    --bg: #F8F9FF;          /* page background */
+    --surface: #FFFFFF;     /* cards, table, inputs' container */
+    --tint: #EFF4FF;        /* light blue boxes, hero, footer */
+    --text: #0F172A;        /* headings and main text */
+    --muted: #475569;       /* secondary text */
+    --accent: #006A61;      /* teal: buttons, links, labels */
+    --on-accent: #F8F9FF;   /* text on top of the teal accent */
+    --border: #E2E8F0;
+    --highlight: #E6F4F2;   /* featured row in the schedule */
+}
+
+/* ============================================================
+   GLOBAL RESET + BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    accent-color: var(--accent);      /* colors radios, checkboxes, range */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.link {
+    color: var(--muted);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.6px;
+    text-decoration: none;
+}
+
+.link-container {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 7px 16px 8.59px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10.667px;
+    border-radius: 9999px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.green-text {
+    color: var(--accent);
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16.8px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.subtext {
+    color: var(--muted);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    align-self: stretch;
+}
+
+.title {
+    color: var(--text);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 12px 24px;
+    border: 2px solid transparent;      /* reserve space for hover border */
+    border-radius: 8px;
+    background: var(--accent);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--on-accent);
+    text-decoration: none;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.2s ease,
+                box-shadow 0.25s ease;
+}
+
+.button:hover {
+    background-color: var(--surface);
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px -2px rgba(0, 106, 97, 0.25);
+}
+
+/* ============================================================
+   HEADER + RESPONSIVE NAVIGATION
+   On phones the header uses flex-wrap, so the site name, the nav
+   links and the dark-mode toggle drop onto separate lines instead
+   of overflowing. From 640px (see TABLET) wrapping is turned off
+   and the nav is pushed to the right with margin-left: auto.
+   ============================================================ */
+header {
+    display: flex;
+    min-height: 80px;
+    padding: 12px 24px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+header .title {
+    color: var(--text);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+header nav .link {
+    color: var(--muted);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19.6px;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+header nav .link:hover {
+    color: var(--accent);
+}
+
+header nav .link.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+header label.subtext {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    cursor: pointer;
+    user-select: none;
+}
+
+header label.subtext input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 32px;
+    height: 16px;
+    border-radius: 8px;
+    background: var(--surface);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    transition: background 0.15s ease;
+}
+
+header label.subtext input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--accent);
+    transition: transform 0.15s ease;
+}
+
+header label.subtext input[type="checkbox"]:checked::after {
+    transform: translateX(16px);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.HeroSection {
+    display: flex;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background: var(--tint);
+}
+
+.HeroSectionTop {
+    display: flex;
+    padding-bottom: 32px;
+    align-items: flex-end;
+    align-self: stretch;
+}
+
+.HeroSection h1 {
+    font-family: "Space Grotesk", sans-serif;
+    /* fluid: 2rem on phones, grows with viewport, caps at 4rem */
+    font-size: clamp(2rem, 5vw + 0.5rem, 4rem);
+    color: var(--accent);
+    width: 100%;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.HeroSectionBottom {
+    display: flex;
+    padding-bottom: 8px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+.MainContentGrid {
+    display: flex;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 48px;
+}
+
+/* ============================================================
+   UPCOMING EVENTS
+   ============================================================ */
+.UpcomingSection,
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    width: 100%;
+}
+
+.UpcomingSection > p {
+    display: flex;
+    padding-bottom: 8px;
+    align-items: flex-end;
+    align-self: stretch;
+    margin: 0;
+}
+
+.UpcomingSection .Cardgrid {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    /* 1 column on mobile — no hardcoded row heights */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    justify-self: stretch;
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.10),
+                0 2px 4px -2px rgba(0, 0, 0, 0.10);
+    padding: 20px;
+    overflow: hidden;                /* keep images inside rounded corners */
+}
+
+.article-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.article-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.article-card .button {
+    margin-top: 8px;
+}
+
+/* gap handles spacing inside cards */
+.article-card > * {
+    margin: 0;
+}
+
+/* ============================================================
+   PAST EVENTS
+   ============================================================ */
+.PastEvents {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06),
+                0 0 8px 2px rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    padding: 20px;
+    background: var(--surface);
+    width: 100%;
+}
+
+.PastEventsTop {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.PastEventsTop p {
+    display: inline-flex;
+    padding-top: 4.5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5px;
+    margin: 0;
+}
+
+.PastEventsBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.PastEventsCard {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.10),
+                0 2px 4px -2px rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.events-card-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+}
+
+.events-card-footer .subtext {
+    font-weight: 700;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-top: 1px solid var(--border);
+    background: var(--tint);
+}
+
+footer .HorizontalBorder {
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+}
+
+footer .HorizontalBorder .leftCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+footer .HorizontalBorder .rightCard {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px 20px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
+   TABLET — ≥ 640px
+   ============================================================ */
+@media (min-width: 640px) {
+    header {
+        padding: 16px 40px;
+        flex-wrap: nowrap;
+    }
+
+    header nav {
+        margin-left: auto;
+    }
+
+    .HeroSection {
+        padding: 48px 40px;
+    }
+
+    .MainContentGrid {
+        padding: 48px 40px;
+    }
+
+    .UpcomingSection .Cardgrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .PastEventsBottom {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .PastEventsBottom .PastEventsCard {
+        flex: 1 1 calc(50% - 8px);
+    }
+
+    footer {
+        padding: 24px 40px;
+    }
+
+    footer .HorizontalBorder {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    footer .HorizontalBorder .leftCard {
+        grid-column: 1 / span 6;
+    }
+
+    footer .HorizontalBorder .rightCard {
+        grid-column: 7 / span 6;
+    }
+}
+
+/* ============================================================
+   DESKTOP — ≥ 1024px  (matches your SVG @ 1280px)
+   ============================================================ */
+@media (min-width: 1024px) {
+    header {
+        height: 80px;
+        padding: 0 88px;
+        flex-wrap: nowrap;
+    }
+
+    header .title {
+        font-size: 1.5rem;
+    }
+
+    .HeroSection {
+        padding: 64px 88px;
+    }
+
+    .HeroSectionTop h1 {
+        width: 55%;
+    }
+
+    .MainContentGrid {
+        padding: 64px 88px;
+    }
+
+    .UpcomingSection .Cardgrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px;
+    }
+
+    .PastEventsBottom {
+        flex-wrap: nowrap;
+    }
+
+    .PastEventsBottom .PastEventsCard {
+        flex: 1 0 0;
+    }
+
+    footer {
+        padding: 24px 88px;
+    }
+}
+
+/* ============================================================
+   LARGE DESKTOP — ≥ 1440px  (optional cap)
+   ============================================================ */
+@media (min-width: 1440px) {
+    .MainContentGrid,
+    .HeroSection {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================================
+   SHARED COMPONENTS (used by home, details, schedule, register)
+   ============================================================ */
+
+/* remove default margins inside generic sections — gap handles spacing */
+.section > * {
+    margin: 0;
+}
+
+.page-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 3vw + 1rem, 3rem);
+    line-height: 1.1;
+    color: var(--text);
+}
+
+.section-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+}
+
+/* simple flex row (button groups, headings with a link on the right) */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.space-between {
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* secondary button: add next to .button */
+.button-outline {
+    background: var(--surface);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.button-outline:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+/* small pill labels */
+.tag {
+    display: inline-block;
+    width: max-content;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    background: var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tag-green {
+    background: var(--accent);
+    color: var(--on-accent);
+}
+
+/* light blue box */
+.tint {
+    background: var(--tint);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+}
+
+.divider {
+    width: 100%;
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+}
+
+/* list of small meta items (date, time, venue) */
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* content + sidebar layout (stacks on mobile) */
+.split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: 100%;
+    align-items: start;
+}
+
+.split img {
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Date / Time / Venue tiles */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    width: 100%;
+    margin: 0;
+}
+
+.info-grid div {
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--tint);
+}
+
+.info-grid dt {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.info-grid dd {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* stat boxes (48+ Live Sessions...) */
+.Stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Stats li {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 120px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.Stats strong {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+/* big image with caption on top (event details) */
+.banner {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.banner figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
+}
+
+.banner figcaption p {
+    margin: 0;
+}
+
+.banner .title {
+    color: #FFF;
+}
+
+.banner .green-text {
+    color: #E6F4F2;
+}
+
+/* agenda list with a line on the left */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: none;
+    border-left: 2px solid var(--border);
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+/* add to <fieldset> together with .article-card */
+.fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+/* fieldset inside another fieldset: no extra indent */
+.fieldset .fieldset {
+    width: 100%;
+    padding: 0;
+}
+
+.fieldset legend {
+    float: left;            /* makes legend behave like a normal block */
+    width: 100%;
+    padding: 0 0 8px;
+}
+
+.fieldset .legend {
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--tint);
+    color: var(--text);
+    font: inherit;
+    font-weight: 400;
+}
+
+.input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+/* fields side by side when there is room, stacked on mobile
+   (second selector beats ".article-card > div" from the events page) */
+.form-grid,
+.article-card > .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    width: 100%;
+}
+
+/* radio / checkbox tile */
+.choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 12px;
+    border-radius: 8px;
+    background: var(--tint);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 24px;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    background: var(--tint);
+    text-align: center;
+}
+
+.upload p {
+    margin: 0;
+}
+
+.range {
+    width: 100%;
+}
+
+.color {
+    width: 64px;
+    height: 40px;
+    padding: 2px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--tint);
+    cursor: pointer;
+}
+
+/* video fills its container like the images */
+.media {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background: var(--text);
+}
+
+.scale {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ============================================================
+   TABLE (schedule)
+   ============================================================ */
+.table-wrap {
+    width: 100%;
+    /* the table keeps a min-width so its columns stay readable;
+       on narrow screens only this wrapper scrolls, not the page */
+    overflow-x: auto;
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.10),
+                0 2px 4px -2px rgba(0, 0, 0, 0.10);
+}
+
+.table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table caption {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 16px 20px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    background: var(--tint);
+    font-size: 12px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.table tfoot td {
+    border-bottom: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.highlight {
+    background: var(--highlight);
+}
+
+/* footer social links row */
+footer .row {
+    padding-top: 16px;
+}
+
+.PastEventsTop .title {
+    margin: 0;
+}
+
+/* ============================================================
+   SHARED — DESKTOP ≥ 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+    .split {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    .split-even {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .banner img {
+        height: 380px;
+    }
+}
+
+/* ============================================================
+   DARK MODE (CSS only, no JavaScript)
+   The "Dark Mode" checkbox in the header has id="dark-mode".
+   body:has(#dark-mode:checked) matches the body only while that
+   checkbox is ticked, and then swaps the color variables above.
+   Because every rule uses var(--...), the whole page changes.
+   ============================================================ */
+body:has(#dark-mode:checked) {
+    --bg: #0B1220;
+    --surface: #131C2E;
+    --tint: #1A2540;
+    --text: #E2E8F0;
+    --muted: #A3B1C6;
+    --accent: #4FD1C5;
+    --on-accent: #0B1220;
+    --border: #2A3650;
+    --highlight: #12332F;
+    color-scheme: dark;     /* dark date/time pickers and scrollbars */
+}
